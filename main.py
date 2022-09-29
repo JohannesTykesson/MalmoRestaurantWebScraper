@@ -1,11 +1,14 @@
 from StoraVarvsgatan6 import StoraVarvsgatan6
+from Spill import Spill
+from MiaMarias import MiaMarias
+from Saltimporten import Saltimporten
 
-r1 = StoraVarvsgatan6()
-print(r1.name)
-
-print(r1.is_valid)
-r1.validate()
-print(r1.is_valid)
-
-r1.fetch_data()
-print(r1.dishes)
+restaurants=[StoraVarvsgatan6(), Spill(), MiaMarias(), Saltimporten()]
+for restaurant in restaurants:
+    restaurant.fetch_data()
+    print(restaurant.name)
+    if restaurant.is_valid:
+        restaurant.validate()
+    print("Valid: " + str(restaurant.is_valid))
+    print(restaurant.dishes)
+    print()

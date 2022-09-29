@@ -2,10 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 
 class Restaurant(object):
+    days = { 0: "måndag", 1: "tisdag", 2: "onsdag", 3: "torsdag", 4: "fredag", 5: "lördag", 6: "söndag" }
     name = ""
     url = ""
     dishes = []
-    is_valid = False
+    is_valid = True
     
     def __init__(self, name, url):
         self.name = name
